@@ -1,23 +1,32 @@
-.ba-container {
-    margin: 0 auto;
-    max-width: 1170px;
-    padding: 0 15px;
-}
+// header menu *******************************
 
 .ba-header {
-    background-color: $bgcolor-header1;
-    // position: absolute;
-    // bottom: 0;
-    // left: 0;
-    // z-index: 1;
-    // width: 100%;
-    // height: 100px;
+    &__absolut-menu {
+        background-color: $bgcolor-header;
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+        bottom: 0;
+    }
 
-    &__menu {
-        list-style: none;
+    &__header-wrapper {
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: space-between;
+        height: 100px;
+    }
+
+    &__header-logo {
+        font-family: 'Josefin Sans', sans-serif;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    &__menu {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        list-style: none;
     }
 
     &__item + &__item {
@@ -31,20 +40,27 @@
         text-decoration: none;
         text-transform: uppercase;
         color: inherit;
+        font-family: 'Aleo', serif;
+        font-weight: lighter;
+        font-size: 1rem;
+
         &:hover {
+            opacity: .8;
+            transition: .3s;
             cursor: pointer;
+        }
+        &:active {
             opacity: .8;
             transition: .3s;
         }
-    }
-    
-    &__header-wrapper {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        height: 100px;
+        &:focus {
+            opacity: .8;
+            transition: .3s ;
+        }
     }
 }
+
+// header info ************************
 
 .ba-bhromaon {
     &__bg-png {
@@ -52,5 +68,447 @@
         background-size: cover;
         position: relative;
         height: 100vh;
+    }
+
+    &__info-wrapper {
+        padding: 260px 0 100px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+    
+    &__h1-logo {
+        font-family: 'Josefin Sans', sans-serif;
+        font-weight: bold;
+        text-transform: uppercase;
+        font-size: 3em;
+        padding-bottom: 15px;
+    }
+    &__p-logo {
+        font-family: 'Josefin Sans', sans-serif;
+        font-weight: 400;
+        font-size: 1.5em;
+        text-transform: capitalize;
+        text-align: center;
+        padding-bottom: 45px;
+    }
+
+    &__search {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__search-line {
+        width: 500px;
+        height: 60px;
+        text-align: center;
+        text-transform: capitalize;
+        font-family: 'Josefin Sans', sans-serif;
+        font-weight: 400;
+        border: none;
+    }
+
+    &__search-button {
+        height: 60px;
+        width: 150px;
+        border: 1px solid $white;
+        background-color: $bgcolor-header;
+        color: $white;
+        text-transform: uppercase;
+        font-family: 'Josefin Sans', sans-serif;
+        font-weight: 400;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        &:hover {
+            cursor: pointer;
+            opacity: .8;
+            transition: .3s;
+        }
+        &:focus {
+            opacity: .8;
+            transition: .3s;
+        }
+        &:active {
+            opacity: .8;
+            transition: .3s;
+        }
+    }
+    &__span-button {
+        padding-right: 10px;
+    }
+
+    &__scroll {
+        position: absolute;
+        bottom: 30%;
+        text-align: center;
+        text-transform: capitalize;
+
+        font-family: 'Josefin Sans', sans-serif;
+        font-weight: 400;
+        font-size: 14px;
+        opacity: .6;
+
+        &:hover {
+            cursor: pointer;
+            opacity: 1;
+            transition: .3s;
+        }
+
+        &::after {
+            content: '\142F';
+        }
+    }
+}
+
+// about **************************
+
+.ba-about {
+    &__bg-png {
+        background-image: url(../photo/bg-about.PNG);
+        background-size: cover;
+    }
+
+    &__about-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__h2-ablogo {
+        font-family: 'Aleo', serif;
+        font-weight: 400;
+        text-transform: capitalize;
+        padding-bottom: 45px;
+    }
+
+    &__about-text1, &__about-text2 {
+        font-family: 'Josefin Sans', sans-serif;
+        font-weight: 400;
+    }
+
+    &__about-text1 {
+        padding-bottom: 30px;
+    }
+
+    &__about-text2 {
+        padding-bottom: 40px;
+    }
+
+    &__link-btn {
+        width: 220px;
+        height: 60px;
+        background-color: $btn;
+        border: none;
+        
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &:hover {
+            opacity: .8;
+            transition: .3s;
+            cursor: pointer;
+        }
+        &:focus {
+            opacity: .8;
+            transition: .3s;
+        }
+        &:active {
+            opacity: .8;
+            transition: .3s;
+        }
+    }
+    
+    &__btn {
+        text-decoration: none;
+        color: inherit;
+        text-transform: uppercase;
+
+        font-family: 'Aleo', serif;
+        font-weight: 400;
+    }
+
+    &__img1 {
+        padding: 115px 125px 5px 65px;
+    }
+
+    &__img2 {
+        padding-left: 190px;
+        padding-bottom: 115px;
+    }
+}
+
+// section icon ***********
+
+.ba-icon {
+    &__bg-dark {
+        background-color: $bgcolor-section;
+    }
+
+    &__link-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+
+        padding: 80px 0 100px;
+        &:first-child {
+            padding-left: 65px;
+        }
+        &:last-child {
+            padding-right: 65px;
+        }
+    }
+
+    &__icon-item {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        &:hover {
+            opacity: .8;
+            transition: .3s;
+            cursor: pointer;
+        }
+        &:focus {
+            opacity: .8;
+            transition: .3s;
+        }
+        &:active {
+            opacity: .8;
+            transition: .3s;
+        }
+    }
+
+    &__icon-link {
+        text-decoration: none;
+        text-transform: capitalize;
+        color: inherit;
+        font-size: 1.5em;
+
+        font-family: 'Aleo', serif;
+        font-weight: 400;
+        padding-top: 20px;
+    }
+
+    &__icon-png {
+        width: 60px;
+        height: 60px;
+    }
+
+    &__pos-absol {
+        position: absolute;
+        z-index: 1;
+        top: 40px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60%;
+        height: 15%;
+    }
+}
+
+// section TOWN ************************
+
+.ba-town {
+    &__bg-png {
+        background-image: url(../photo/bg-town.PNG);
+        background-size: cover;
+    }
+
+    &__town-wrapper {
+        padding: 230px 0 100px;
+    }
+
+    &__info {
+        padding: 45px 30px;
+        font-family: 'Josefin Sans', sans-serif;
+        font-weight: 400;
+    }
+
+    &__town-bgcolor {
+        max-width: 540px;
+        background-color: $bgcolor-section;
+    }
+
+    &__name-country {
+        padding-bottom: 20px;
+        text-transform: capitalize;
+        font-size: 1.2em;
+    }
+
+    &__name-town {
+        padding-bottom: 20px;
+        text-transform: uppercase;
+        font-size: 1.3em;
+    }
+
+    &__town-info {
+        padding-bottom: 40px;
+        font-size: 14px;
+    }
+}
+
+// section TOWN-2 ************************
+
+.ba-town {
+    &__bg-png2 {
+        background-image: url(../photo/bg-town2.PNG);
+        background-size: cover;
+    }
+
+    &__town-wrapper2 {
+        padding: 230px 0 100px;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    &__info {
+        padding: 45px 30px;
+        font-family: 'Josefin Sans', sans-serif;
+        font-weight: 400;
+    }
+
+    &__town-bgcolor {
+        max-width: 540px;
+        background-color: $bgcolor-section;
+    }
+
+    &__name-country {
+        padding-bottom: 20px;
+        text-transform: capitalize;
+        font-size: 1.2em;
+    }
+
+    &__name-town {
+        padding-bottom: 20px;
+        text-transform: uppercase;
+        font-size: 1.3em;
+    }
+
+    &__town-info {
+        padding-bottom: 40px;
+        font-size: 14px;
+    }
+}
+
+// section REVIEWS **********************
+
+.ba-reviews {
+    &__bg-png {
+        background-image: url(../photo/bg-reviews.PNG);
+        background-size: cover;
+    }
+
+    &__reviews-wrapper {
+        text-align: center;
+    }
+
+    &__reviews-logo {
+        padding-top: 110px;
+        padding-bottom: 95px;
+
+        text-transform: capitalize;
+        font-family: 'Aleo', serif;
+        font-weight: 400;
+        font-size: 2em;
+    }
+
+    &__info {
+        display: flex;
+        align-items: center;
+
+        padding-bottom: 200px;
+    }
+
+    &__reviews-bgcolor {
+        background-color: $bgcolor-reviews;
+        max-width: 665px;
+        max-height: 285px;
+
+        display: flex;
+        align-items: center;
+    }
+
+    &__comment {
+        padding: 45px 55px;
+        text-align: left;
+
+        font-family: 'Josefin Sans', sans-serif;
+        font-weight: 400;
+    }
+
+    &__client-name {
+        text-transform: uppercase;
+        padding-bottom: 30px;
+        font-size: 1.3em;
+    }
+
+    &__comment-client {
+        line-height: 1.5em;
+        &::before {
+            content: '\1F676';
+            color: $btn;
+            font-size: 2em;
+        }
+    }
+}
+
+// footer **************************
+
+.ba-footer {
+    &__bg-color {
+        background-color: $bgfooter;
+    }
+
+    &__footer-wrapper {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    &__h1-logo {
+        font-family: 'Josefin Sans', sans-serif;
+        font-weight: bold;
+        text-transform: uppercase;
+        font-size: 1.5em;
+        padding-bottom: 15px;
+        padding-top: 115px;
+    }
+    &__p-logo {
+        font-family: 'Josefin Sans', sans-serif;
+        font-weight: 400;
+        text-transform: capitalize;
+        text-align: center;
+        padding-bottom: 45px;
+    }
+
+    &__link-icon {
+        padding-bottom: 45px;
+    }
+
+    &__link {
+        text-decoration: none;
+        text-transform: uppercase;
+        color: inherit;
+        font-size: 1.3em;
+
+        &:hover {
+            color: $bgcolor-header;
+            transition: .3s;
+        }
+        &:focus {
+            color: $bgcolor-header;
+            transition: .3s;
+        }
+        &:active {
+            color: $bgcolor-header;    
+            transition: .3s;
+        }
+    }
+
+    &__link + &__link {
+        padding-left: 20px;
     }
 }
