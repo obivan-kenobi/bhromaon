@@ -41,7 +41,7 @@ body {
 }
 .ba-header__item + .ba-header__item::before {
   content: "";
-  margin-left: 40px;
+  padding-left: 40px;
 }
 .ba-header__link {
   text-decoration: none;
@@ -63,6 +63,88 @@ body {
 .ba-header__link:focus {
   opacity: 0.8;
   transition: 0.3s;
+}
+@media (max-width: 992px) {
+  .ba-header__nav::before {
+    position: absolute;
+    content: "MENU";
+    bottom: 45px;
+    right: 100px;
+    width: 10px;
+    z-index: 10;
+    cursor: pointer;
+  }
+  .ba-header__navbar {
+    position: relative;
+    width: auto;
+    height: auto;
+    background-color: transparent;
+    transform: translateX(150%);
+    opacity: 0;
+    padding: 0;
+  }
+  .ba-header__navbar {
+    position: fixed;
+    background-color: #5474fd;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    padding: 2rem;
+    transform: translateX(-100%);
+    transition: 0.4s;
+  }
+  .ba-header #toggle-menu:checked + .ba-header__navbar {
+    transform: translateX(0);
+  }
+  :checked + .ba-header__navbar {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  .ba-header__menu {
+    display: flex;
+    flex-direction: column;
+  }
+  .ba-header__item + .ba-header__item::before {
+    content: "";
+    padding-left: 0;
+  }
+  .ba-header__link {
+    font-size: 3rem;
+  }
+  .ba-header__item {
+    font-size: 3rem;
+    opacity: 0;
+    transform: translateX(-1em) scale(1.2);
+    transition: 0.5s;
+    line-height: 3em;
+  }
+  :checked + .ba-header__navbar .ba-header__item {
+    opacity: 1;
+    transform: none;
+    transition-delay: 0.5s;
+  }
+  :checked + .ba-header__navbar .ba-header__item:nth-child(2) {
+    transition-delay: 0.75s;
+  }
+  :checked + .ba-header__navbar .ba-header__item:nth-child(3) {
+    transition-delay: 1s;
+  }
+  :checked + .ba-header__navbar .ba-header__item:nth-child(4) {
+    transition-delay: 1.25s;
+  }
+  :checked + .ba-header__navbar .ba-header__item:nth-child(5) {
+    transition-delay: 1.5s;
+  }
+}
+@media (max-width: 480px) {
+  .ba-header__item {
+    font-size: 2.5rem;
+  }
+  .ba-header__link {
+    font-size: 1.5rem;
+  }
 }
 
 .ba-bhromaon__bg-png {
@@ -153,6 +235,21 @@ body {
 .ba-bhromaon__scroll::after {
   content: "ᐯ";
 }
+@media (max-width: 480px) {
+  .ba-bhromaon__search-line {
+    width: 275px;
+  }
+}
+@media (max-width: 415px) {
+  .ba-bhromaon__search-line {
+    width: 245px;
+  }
+}
+@media (max-width: 375px) {
+  .ba-bhromaon__search-line {
+    width: 220px;
+  }
+}
 
 .ba-about__bg-png {
   background-image: url(../photo/bg-about.PNG);
@@ -215,6 +312,32 @@ body {
   padding-left: 190px;
   padding-bottom: 115px;
 }
+@media (max-width: 768px) {
+  .ba-about__about-wrapper {
+    flex-direction: column-reverse;
+  }
+  .ba-about__link-btn {
+    margin-bottom: 50px;
+  }
+  .ba-about__img2 {
+    padding-bottom: 50px;
+  }
+}
+@media (max-width: 480px) {
+  .ba-about__img1, .ba-about__img2 {
+    padding: 0;
+    width: 370px;
+  }
+  .ba-about__img1 {
+    padding: 25px 0 5px;
+  }
+  .ba-about__img2 {
+    padding: 5px 0 25px;
+  }
+  .ba-about__about-images {
+    text-align: center;
+  }
+}
 
 .ba-icon__bg-dark {
   background-color: rgba(0, 0, 0, 0.6);
@@ -271,6 +394,21 @@ body {
   transform: translateX(-50%);
   width: 60%;
   height: 15%;
+}
+@media (max-width: 480px) {
+  .ba-icon__pos-absol {
+    display: none;
+  }
+  .ba-icon__link-wrapper {
+    flex-direction: column-reverse;
+    padding: 0;
+  }
+  .ba-icon__link-wrapper:first-child {
+    padding-bottom: 20px;
+  }
+  .ba-icon__icon-item {
+    padding: 20px 0 10px;
+  }
 }
 
 .ba-town__bg-png {
@@ -382,6 +520,43 @@ body {
   content: "🙶";
   color: #496bfe;
   font-size: 2em;
+}
+@media (max-width: 768px) {
+  .ba-reviews {
+    flex-direction: column-reverse;
+  }
+  .ba-reviews__client-img {
+    width: 665px;
+  }
+}
+@media (max-width: 480px) {
+  .ba-reviews__client-img {
+    width: 370px;
+    padding-top: 25px;
+  }
+  .ba-reviews__comment {
+    padding: 45px 10px;
+  }
+}
+@media (max-width: 415px) {
+  .ba-reviews__comment {
+    padding: 5px 2px;
+  }
+  .ba-reviews__client-name {
+    text-align: center;
+    font-size: 1.2rem;
+    padding: 15px 0;
+  }
+}
+@media (max-width: 375px) {
+  .ba-reviews__comment {
+    padding: 5px 2px;
+  }
+  .ba-reviews__client-name {
+    text-align: center;
+    font-size: 1.2rem;
+    padding: 15px 0;
+  }
 }
 
 .ba-footer__bg-color {
